@@ -10,10 +10,10 @@
 #define TESTCARD "minion"
 
 int main(){
-    int i, r, card, newBuys; // need to figure out
+    int i, r, card, newCards, discarded, newActions, newBuys; // need to figure out
     int handPos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     int seed = 100;
-    int thisPlayer = 0;
+    int currentPlayer = 0;
     int numPlayers = 2;
     // set card array
     int k[10] = { adventurer, council_room, feast, gardens, mine
@@ -36,7 +36,7 @@ int main(){
     //
     memset(&G, 23, sizeof(struct gameState));    // set the game state
     r = initializeGame(2, k, seed, &G);          // initialize a new game
-    G.handCount[thisPlayer] = 0;                  // set any other variables
+    G.handCount[currentPlayer] = 0;                  // set any other variables
     memcpy(&testG, &G, sizeof(struct gameState));
 
     // call the refactored function
@@ -56,7 +56,7 @@ int main(){
     //
     memset(&G, 0, sizeof(struct gameState)); // set the game state
     r = initializeGame(3, k, seed, &G);      // initialize a new game
-    G.handCount[thisPlayer] = 0;              // set any other variables
+    G.handCount[currentPlayer] = 0;              // set any other variables
     memcpy(&testG, &G, sizeof(struct gameState));
 
     // call the refactored function again
