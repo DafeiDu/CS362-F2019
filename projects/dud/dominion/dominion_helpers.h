@@ -3,6 +3,10 @@
 
 #include "dominion.h"
 
+int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+                   struct gameState *state);
+int baronCard(int currentPlayer, struct gameState *state, int choice1,int handPos);
+
 int drawCard(int player, struct gameState *state);
 int updateCoins(int player, struct gameState *state, int bonus);
 int discardCard(int handPos, int currentPlayer, struct gameState *state,
